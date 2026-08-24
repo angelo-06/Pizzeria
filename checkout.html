@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Craft </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="activos/css/custom.css" />
+</head>
+
+<body class="pt-5 bg-dark text-white">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-3 border-primary py-3">
+    <div class="container">
+      <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+        Pizza Craft
+      </a>
+      <div class="d-flex align-items-center ms-auto">
+        <a href="menu.html" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-arrow-left me-1"></i>Volver al Menú
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CHECKOUT / RESUMEN DE PEDIDO -->
+  <section class="py-5 mt-4">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-6">
+          <p class="text-uppercase text-primary fw-semibold small mb-2">Último paso</p>
+          <h1 class="fw-bold">Tu pedido</h1>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Resumen del carrito -->
+        <div class="col-lg-5">
+          <div class="card text-body h-100">
+            <div class="card-body p-3 p-md-4">
+              <h3 class="h5 mb-3">Resumen del carrito</h3>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Pepperoni Craft <span class="text-muted small">x1</span></span>
+                  <span class="font-monospace">$14.90</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Margherita Clásica <span class="text-muted small">x1</span></span>
+                  <span class="font-monospace">$11.50</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Limonada de la Casa <span class="text-muted small">x2</span></span>
+                  <span class="font-monospace">$9.00</span>
+                </li>
+              </ul>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cupón de descuento" aria-label="Cupón de descuento" />
+                <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+              </div>
+
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Subtotal</span>
+                <span>$35.40</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-2">
+                <span>Descuento</span>
+                <span>-$0.00</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between font-monospace fw-bold fs-4 text-primary">
+                <span>Total</span>
+                <span>$35.40</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de pedido con validación -->
+        <div class="col-lg-7">
+          <div class="card text-body h-100">
+            <div class="card-body p-3 p-md-4">
+              <h3 class="h5 mb-3">Datos de entrega</h3>
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" required />
+                  <div class="invalid-feedback">Ingresá tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="apellido" required />
+                  <div class="invalid-feedback">Ingresá tu apellido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="telefono" required />
+                  <div class="invalid-feedback">Ingresá un teléfono válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="direccion" class="form-label">Dirección de entrega</label>
+                  <input type="text" class="form-control" id="direccion" required />
+                  <div class="invalid-feedback">Ingresá la dirección de entrega.</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block">Método de pago</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoTarjeta" value="tarjeta" checked required />
+                    <label class="form-check-label" for="pagoTarjeta">
+                      <i class="bi bi-credit-card me-1"></i>Tarjeta
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoEfectivo" value="efectivo" required />
+                    <label class="form-check-label" for="pagoEfectivo">
+                      <i class="bi bi-cash-coin me-1"></i>Efectivo
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12 d-grid mt-2">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Confirmar pedido <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="activos/js/main.js"></script>
+</body>
+</html>
