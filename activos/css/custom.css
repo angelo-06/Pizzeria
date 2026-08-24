@@ -1,0 +1,51 @@
+:root {
+  --bs-primary: #c1440e;
+  --bs-primary-rgb: 193, 68, 14;
+  --bs-success: #6b7a3a;
+  --bs-success-rgb: 107, 122, 58;
+  --bs-warning: #e8a93a;
+  --bs-warning-rgb: 232, 169, 58;
+  --bs-dark: #211b16;
+  --bs-dark-rgb: 33, 27, 22;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #96350a;
+  --bs-btn-hover-border-color: #96350a;
+  --bs-btn-active-bg: #7a2b08;
+  --bs-btn-active-border-color: #7a2b08;
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--bs-primary);
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-link-custom {
+  transition: opacity 0.2s ease, color 0.2s ease;
+  opacity: 0.75;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  opacity: 1;
+  color: #ffffff !important;
+}
+
+.form-bg-dark:focus {
+  background-color: #1a1e21 !important;
+  color: #ffffff !important;
+  box-shadow: none;
+  border-color: var(--bs-primary) !important;
+}
