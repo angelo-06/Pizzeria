@@ -3,165 +3,575 @@
 
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Responsive: permite adaptar la página al tamaño de la pantalla -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Pizza Craft</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <!-- CSS personalizado -->
   <link rel="stylesheet" href="activos/css/custom.css" />
 </head>
 
+
+<!-- pt-5 = padding superior -->
 <body class="pt-5">
 
-   <!-- NAVBAR -->
+
+  <!-- ==================== NAVBAR ==================== -->
+
+  <!-- Navbar de Bootstrap -->
+  <!-- navbar-expand-lg = se mantiene expandido desde lg y se colapsa debajo de lg -->
+  <!-- fixed-top = mantiene el Navbar fijo arriba -->
+  <!-- navbar-dark + bg-dark = Navbar oscuro -->
+  <!-- border-bottom = borde inferior -->
   <nav
     class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-primary border-2 py-2 shadow-sm">
+
+    <!-- container = limita el contenido y adapta su ancho según el breakpoint -->
     <div class="container">
+
+
+      <!-- ==================== LOGO ==================== -->
+
+      <!-- navbar-brand = elemento principal/marca del Navbar -->
+      <!-- d-flex = Flexbox -->
+      <!-- align-items-center = centra verticalmente -->
+      <!-- gap-2 = separación entre los elementos -->
       <a class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2" href="index.html">
-        <img src="activos/img/logo.jpg" alt="Logo Pizza Craft" width="40" height="40"
-          class="rounded-circle border border-primary border-2 object-fit-cover" onerror="this.style.display='none'" />
+
+        <!-- rounded-circle = imagen circular -->
+        <!-- border = borde -->
+        <!-- object-fit-cover = ajusta la imagen al espacio disponible -->
+        <img src="activos/img/logo.jpg"
+          alt="Logo Pizza Craft"
+          width="40"
+          height="40"
+          class="rounded-circle border border-primary border-2 object-fit-cover"
+          onerror="this.style.display='none'" />
+
+        <!-- text-primary = utiliza el color primario de Bootstrap -->
         <span>Pizza<span class="text-primary">Craft</span></span>
+
       </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Abrir menú">
+
+
+      <!-- ==================== BOTÓN DEL MENÚ RESPONSIVE ==================== -->
+
+      <!-- navbar-toggler = botón utilizado para abrir/cerrar el Navbar en pantallas pequeñas -->
+      <!-- data-bs-toggle="collapse" = activa el componente Collapse de Bootstrap -->
+      <!-- data-bs-target="#navbarPrincipal" = indica qué elemento será abierto/cerrado -->
+      <button
+        class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal"
+        aria-controls="navbarPrincipal"
+        aria-expanded="false"
+        aria-label="Abrir menú">
+
+        <!-- Ícono de menú proporcionado por Bootstrap -->
         <span class="navbar-toggler-icon"></span>
+
       </button>
+
+
+      <!-- ==================== CONTENIDO DEL NAVBAR ==================== -->
+
+      <!-- collapse = contenido que puede abrirse y cerrarse -->
+      <!-- navbar-collapse = estructura del Navbar para contenido colapsable -->
       <div class="collapse navbar-collapse" id="navbarPrincipal">
+
+
+        <!-- ==================== ENLACES ==================== -->
+
+        <!-- navbar-nav = lista de navegación de Bootstrap -->
+        <!-- mx-auto = centra horizontalmente -->
+        <!-- mb-3 = margen inferior en pantallas pequeñas -->
+        <!-- mb-lg-0 = elimina ese margen desde lg -->
+        <!-- text-center = centra el texto -->
         <ul class="navbar-nav mx-auto mb-3 mb-lg-0 fw-semibold text-center gap-lg-2">
+
           <li class="nav-item">
-            <a class="nav-link fs-5 px-3 nav-link-custom" href="index.html">Inicio</a>
+            <a class="nav-link fs-5 px-3 nav-link-custom" href="index.html">
+              Inicio
+            </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link fs-5 px-3 nav-link-custom" href="menu.html">Menú</a>
+            <a class="nav-link fs-5 px-3 nav-link-custom" href="menu.html">
+              Menú
+            </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link active fs-5 px-3 nav-link-custom" href="contacto.html">Contacto</a>
+            <!-- active = indica la página actualmente seleccionada -->
+            <a class="nav-link active fs-5 px-3 nav-link-custom" href="contacto.html">
+              Contacto
+            </a>
           </li>
+
         </ul>
+
+
+        <!-- ==================== ACCIONES DEL NAVBAR ==================== -->
+
+        <!-- d-flex = Flexbox -->
+        <!-- flex-column = elementos en columna -->
+        <!-- flex-lg-row = desde lg pasan a estar en fila -->
+        <!-- align-items-center = centra los elementos -->
+        <!-- gap-2 = separación -->
+        <!-- pt-2 = padding superior en tamaños pequeños -->
+        <!-- pt-lg-0 = elimina el padding desde lg -->
         <div
           class="d-flex flex-column flex-lg-row align-items-center gap-2 pt-2 pt-lg-0 border-top border-lg-0 border-secondary">
+
+
+          <!-- ==================== BUSCADOR ==================== -->
+
+          <!-- d-flex = Flexbox -->
+          <!-- w-100 = ocupa todo el ancho -->
+          <!-- w-lg-auto = desde lg utiliza su ancho automático -->
           <form class="d-flex w-100 w-lg-auto me-lg-1" role="search">
+
+            <!-- input-group = agrupa el input y botón -->
+            <!-- input-group-sm = tamaño pequeño -->
             <div class="input-group input-group-sm">
-              <input class="form-bg-dark form-control bg-dark text-white border-secondary rounded-start-pill ps-3"
-                type="search" placeholder="Buscar pizza..." aria-label="Buscar">
-              <button class="btn btn-outline-secondary rounded-end-pill px-3" type="submit">
+
+              <!-- form-control = estilo Bootstrap para campos -->
+              <!-- bg-dark = fondo oscuro -->
+              <!-- text-white = texto blanco -->
+              <!-- rounded-start-pill = bordes redondeados al inicio -->
+              <!-- ps-3 = padding izquierdo -->
+              <input
+                class="form-bg-dark form-control bg-dark text-white border-secondary rounded-start-pill ps-3"
+                type="search"
+                placeholder="Buscar pizza..."
+                aria-label="Buscar">
+
+              <!-- btn = botón Bootstrap -->
+              <!-- btn-outline-secondary = botón con borde -->
+              <!-- rounded-end-pill = borde redondeado al final -->
+              <button
+                class="btn btn-outline-secondary rounded-end-pill px-3"
+                type="submit">
+
+                <!-- Ícono de Bootstrap Icons -->
                 <i class="bi bi-search text-light"></i>
+
               </button>
+
             </div>
           </form>
-          <a href="checkout.html"
+
+
+          <!-- ==================== CARRITO ==================== -->
+
+          <!-- btn = apariencia de botón Bootstrap -->
+          <!-- btn-outline-light = botón con borde claro -->
+          <!-- position-relative = permite posicionar elementos dentro -->
+          <!-- d-flex = Flexbox -->
+          <!-- align-items-center = centra verticalmente -->
+          <!-- gap-2 = separación -->
+          <!-- my-2 = margen vertical -->
+          <!-- my-lg-0 = elimina margen desde lg -->
+          <a
+            href="checkout.html"
             class="btn btn-outline-light position-relative rounded-pill px-3 py-1 d-flex align-items-center gap-2 my-2 my-lg-0"
             aria-label="Ver carrito">
+
+            <!-- Ícono de Bootstrap Icons -->
             <i class="bi bi-basket3 fs-5 text-primary"></i>
-            <span class="d-lg-none fw-semibold">Carrito</span>
-            <span class="badge bg-primary text-white rounded-circle px-2 py-1 fs-7" data-cart-count>3</span>
+
+            <!-- d-lg-none = solo se muestra debajo de lg -->
+            <!-- Desde lg desaparece -->
+            <span class="d-lg-none fw-semibold">
+              Carrito
+            </span>
+
+            <!-- badge = componente Bootstrap para mostrar una pequeña etiqueta/contador -->
+            <span class="badge bg-primary text-white rounded-circle px-2 py-1 fs-7" data-cart-count>
+              3
+            </span>
+
           </a>
-          <button type="button"
+
+
+          <!-- ==================== CREAR CUENTA ==================== -->
+
+          <!-- btn-primary = botón con color principal -->
+          <!-- d-flex = Flexbox -->
+          <!-- align-items-center = centra verticalmente -->
+          <!-- w-100 = ocupa todo el ancho en pantallas pequeñas -->
+          <!-- w-lg-auto = desde lg utiliza ancho automático -->
+          <!-- justify-content-center = centra el contenido -->
+          <button
+            type="button"
             class="btn btn-primary rounded-pill px-3 py-1 fw-semibold d-flex align-items-center gap-2 shadow-sm w-100 w-lg-auto justify-content-center">
+
             <i class="bi bi-person-circle fs-5"></i>
+
             <span>Crear cuenta</span>
+
           </button>
+
         </div>
+
       </div>
     </div>
   </nav>
 
-  <!-- INFORMACIÓN Y FORMULARIO DE CONTACTO -->
+
+  <!-- ==================== INFORMACIÓN Y FORMULARIO ==================== -->
+
+  <!-- container = contenedor responsive de Bootstrap -->
+  <!-- py-5 = padding vertical -->
+  <!-- mt-4 = margen superior -->
   <main class="container py-5 mt-4">
+
+
+    <!-- ==================== GRID PRINCIPAL ==================== -->
+
+    <!-- row = fila del Grid System -->
+    <!-- g-5 = separación entre las columnas -->
     <div class="row g-5">
+
+
+      <!-- ==================== INFORMACIÓN ==================== -->
+
+      <!-- col-lg-6 = ocupa 6 de 12 columnas desde lg -->
+      <!-- Debajo de lg ocupa todo el ancho -->
       <div class="col-lg-6">
-        <p class="text-uppercase text-primary fw-semibold small mb-2">Escríbenos</p>
-        <h1 class="fw-bold mb-4">¿Tienes alguna duda o catering especial?</h1>
+
+        <!-- Utilidades de texto -->
+        <p class="text-uppercase text-primary fw-semibold small mb-2">
+          Escríbenos
+        </p>
+
+        <h1 class="fw-bold mb-4">
+          ¿Tienes alguna duda o catering especial?
+        </h1>
+
         <p class="text-muted mb-4">
           Estamos para atenderte. Puedes visitarnos directamente en nuestro local o dejarnos un mensaje por aquí.
         </p>
 
+
+        <!-- ==================== INFORMACIÓN DE CONTACTO ==================== -->
+
+        <!-- d-flex = Flexbox -->
+        <!-- align-items-center = centra verticalmente -->
+        <!-- gap-3 = separación entre ícono y contenido -->
+        <!-- mb-3 = margen inferior -->
         <div class="mb-3 d-flex align-items-center gap-3">
+
+          <!-- Ícono de Bootstrap Icons -->
           <i class="bi bi-geo-alt fs-3 text-primary"></i>
+
           <div>
             <strong>Ubicación</strong>
-            <p class="mb-0 text-muted small">Av. del Horno de Leña 245, Ciudad.</p>
+
+            <p class="mb-0 text-muted small">
+              Av. del Horno de Leña 245, Ciudad.
+            </p>
           </div>
+
         </div>
 
+
         <div class="mb-3 d-flex align-items-center gap-3">
+
           <i class="bi bi-clock fs-3 text-primary"></i>
+
           <div>
             <strong>Horarios de Atención</strong>
-            <p class="mb-0 text-muted small">Martes a Domingo, 18:00 – 23:30 hs.</p>
+
+            <p class="mb-0 text-muted small">
+              Martes a Domingo, 18:00 – 23:30 hs.
+            </p>
           </div>
+
         </div>
+
 
         <div class="mb-3 d-flex align-items-center gap-3">
+
           <i class="bi bi-telephone fs-3 text-primary"></i>
+
           <div>
             <strong>Teléfono / WhatsApp</strong>
-            <p class="mb-0 text-muted small">+51 987 654 321</p>
+
+            <p class="mb-0 text-muted small">
+              +51 987 654 321
+            </p>
           </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ==================== FORMULARIO ==================== -->
+
+      <!-- col-lg-6 = ocupa las otras 6 de 12 columnas desde lg -->
+      <!-- En pantallas pequeñas pasa debajo de la información -->
+      <div class="col-lg-6">
+
+        <!-- card = componente Card de Bootstrap -->
+        <!-- p-4 = padding interno -->
+        <!-- shadow-sm = sombra pequeña -->
+        <!-- border-0 = elimina el borde -->
+        <div class="card p-4 shadow-sm border-0">
+
+          <h3 class="h5 mb-3">
+            Envíanos un mensaje
+          </h3>
+
+
+          <!-- ==================== FORMULARIO BOOTSTRAP ==================== -->
+
+          <!-- row = Grid System dentro del formulario -->
+          <!-- g-3 = separación entre los campos -->
+          <!-- needs-validation = utilizado para la validación mediante JavaScript -->
+          <form class="row g-3 needs-validation" novalidate>
+
+
+            <!-- col-12 = ocupa las 12 columnas -->
+            <div class="col-12">
+
+              <label for="cNombre" class="form-label">
+                Nombre completo
+              </label>
+
+              <!-- form-control = estilo Bootstrap para input -->
+              <input
+                type="text"
+                class="form-control"
+                id="cNombre"
+                required />
+
+              <!-- invalid-feedback = mensaje de validación Bootstrap -->
+              <div class="invalid-feedback">
+                Ingresa tu nombre.
+              </div>
+
+            </div>
+
+
+            <div class="col-12">
+
+              <label for="cEmail" class="form-label">
+                Correo electrónico
+              </label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="cEmail"
+                required />
+
+              <div class="invalid-feedback">
+                Ingresa un correo válido.
+              </div>
+
+            </div>
+
+
+            <div class="col-12">
+
+              <label for="cMensaje" class="form-label">
+                Mensaje
+              </label>
+
+              <textarea
+                class="form-control"
+                id="cMensaje"
+                rows="4"
+                required></textarea>
+
+              <div class="invalid-feedback">
+                Escribe tu mensaje.
+              </div>
+
+            </div>
+
+
+            <!-- col-12 = ocupa todo el ancho -->
+            <div class="col-12">
+
+              <!-- w-100 = botón ocupa todo el ancho -->
+              <!-- btn-lg = botón grande -->
+              <button
+                type="submit"
+                class="btn btn-primary w-100 btn-lg">
+
+                Enviar mensaje
+
+              </button>
+
+            </div>
+
+          </form>
+
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <div class="card p-4 shadow-sm border-0">
-          <h3 class="h5 mb-3">Envíanos un mensaje</h3>
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="col-12">
-              <label for="cNombre" class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" id="cNombre" required />
-              <div class="invalid-feedback">Ingresa tu nombre.</div>
-            </div>
-            <div class="col-12">
-              <label for="cEmail" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="cEmail" required />
-              <div class="invalid-feedback">Ingresa un correo válido.</div>
-            </div>
-            <div class="col-12">
-              <label for="cMensaje" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="cMensaje" rows="4" required></textarea>
-              <div class="invalid-feedback">Escribe tu mensaje.</div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary w-100 btn-lg">Enviar mensaje</button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
   </main>
 
- <!-- FOOTER -->
+
+  <!-- ==================== FOOTER ==================== -->
+
+  <!-- bg-dark = fondo oscuro -->
+  <!-- text-white-50 = texto blanco con menor intensidad -->
+  <!-- py-5 = padding vertical -->
   <footer class="bg-dark text-white-50 py-5">
+
+    <!-- container = contenedor responsive -->
     <div class="container">
+
+      <!-- row = fila del Grid System -->
+      <!-- g-4 = separación entre columnas -->
       <div class="row g-4">
+
+
+        <!-- ==================== COLUMNA 1 ==================== -->
+
+        <!-- col-md-4 = ocupa 4 de 12 columnas desde md -->
+        <!-- En pantallas pequeñas ocupa todo el ancho -->
         <div class="col-md-4">
-          <h3 class="h5 text-white mb-3">Pizza Craft</h3>
+
+          <h3 class="h5 text-white mb-3">
+            Pizza Craft
+          </h3>
+
           <p class="small mb-0">
             Av. del Horno de Leña 245, Ciudad.<br />
             Abierto de martes a domingo, 18:00 – 23:30.
           </p>
+
         </div>
+
+
+        <!-- ==================== COLUMNA 2 ==================== -->
+
         <div class="col-md-4">
-          <h3 class="h6 text-white mb-3">Enlaces</h3>
+
+          <h3 class="h6 text-white mb-3">
+            Enlaces
+          </h3>
+
+          <!-- list-unstyled = elimina los estilos predeterminados de la lista -->
           <ul class="list-unstyled small">
-            <li class="mb-2"><a href="menu.html" class="link-light link-opacity-75 link-opacity-100-hover">Menú</a></li>
-            <li class="mb-2"><a href="contacto.html" class="link-light link-opacity-75 link-opacity-100-hover">Contacto</a></li>
-            <li class="mb-2"><a href="admin.html" class="link-light link-opacity-75 link-opacity-100-hover">Panel administrador</a></li>
+
+            <!-- mb-2 = margen inferior -->
+            <li class="mb-2">
+              <a
+                href="menu.html"
+                class="link-light link-opacity-75 link-opacity-100-hover">
+                Menú
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="contacto.html"
+                class="link-light link-opacity-75 link-opacity-100-hover">
+                Contacto
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="admin.html"
+                class="link-light link-opacity-75 link-opacity-100-hover">
+                Panel administrador
+              </a>
+            </li>
+
           </ul>
+
         </div>
+
+
+        <!-- ==================== COLUMNA 3 ==================== -->
+
         <div class="col-md-4">
-          <h3 class="h6 text-white mb-3">Seguinos</h3>
+
+          <h3 class="h6 text-white mb-3">
+            Seguinos
+          </h3>
+
+          <!-- d-flex = Flexbox -->
+          <!-- gap-2 = separación entre botones -->
           <div class="d-flex gap-2">
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+            <!-- btn = botón Bootstrap -->
+            <!-- btn-outline-light = botón con borde claro -->
+            <!-- btn-sm = botón pequeño -->
+            <!-- rounded-circle = botón circular -->
+
+            <a
+              href="#"
+              class="btn btn-outline-light btn-sm rounded-circle"
+              aria-label="Instagram">
+
+              <i class="bi bi-instagram"></i>
+
+            </a>
+
+
+            <a
+              href="#"
+              class="btn btn-outline-light btn-sm rounded-circle"
+              aria-label="Facebook">
+
+              <i class="bi bi-facebook"></i>
+
+            </a>
+
+
+            <a
+              href="#"
+              class="btn btn-outline-light btn-sm rounded-circle"
+              aria-label="WhatsApp">
+
+              <i class="bi bi-whatsapp"></i>
+
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
+
+      <!-- hr = línea separadora -->
+      <!-- my-4 = margen vertical -->
       <hr class="border-secondary my-4" />
-      <p class="small text-center mb-0">&copy; 2026 Pizza Craft. Todos los derechos reservados.</p>
+
+      <!-- text-center = centra el texto -->
+      <p class="small text-center mb-0">
+        &copy; 2026 Pizza Craft. Todos los derechos reservados.
+      </p>
+
     </div>
   </footer>
 
+
+  <!-- Bootstrap JavaScript -->
+  <!-- Permite utilizar componentes interactivos como Navbar Collapse -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript propio -->
   <script src="activos/js/main.js"></script>
+
 </body>
 </html>
