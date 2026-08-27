@@ -3,139 +3,365 @@
 
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Responsive: permite que Bootstrap adapte el diseño al ancho de la pantalla -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizza Craft </title>
+
+  <title>Pizza Craft</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <!-- CSS personalizado -->
   <link rel="stylesheet" href="activos/css/custom.css" />
 </head>
 
+<!-- Utilidades Bootstrap:
+     pt-5 = padding superior
+     bg-dark = fondo oscuro
+     text-white = texto blanco -->
+
 <body class="pt-5 bg-dark text-white">
 
-  <!-- NAVBAR -->
+
+  <!-- ==================== NAVBAR ==================== -->
+  <!-- Navbar de Bootstrap -->
+  <!-- navbar-expand-lg = Navbar expandido desde lg y colapsado debajo de lg -->
+  <!-- fixed-top = mantiene el Navbar fijo en la parte superior -->
+  <!-- border-bottom = borde inferior -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-3 border-primary py-3">
+
+    <!-- container = limita el contenido y adapta su ancho según el breakpoint -->
     <div class="container">
+
+      <!-- navbar-brand = nombre/marca principal del Navbar -->
       <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
         Pizza Craft
       </a>
+
+      <!-- Flexbox para colocar el botón a la derecha -->
+      <!-- ms-auto = margen automático al inicio -->
       <div class="d-flex align-items-center ms-auto">
+
+        <!-- Enlace con apariencia de botón Bootstrap -->
+        <!-- btn = apariencia de botón -->
+        <!-- btn-outline-light = estilo claro y efecto hover -->
+        <!-- btn-sm = tamaño pequeño -->
         <a href="menu.html" class="btn btn-outline-light btn-sm">
-          <i class="bi bi-arrow-left me-1"></i>Volver al Menú
+
+          <!-- Ícono de Bootstrap Icons -->
+          <!-- me-1 = margen a la derecha del ícono -->
+          <i class="bi bi-arrow-left me-1"></i>
+
+          Volver al Menú
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- CHECKOUT / RESUMEN DE PEDIDO -->
+
+  <!-- ==================== CHECKOUT ==================== -->
+  <!-- py-5 = padding vertical -->
+  <!-- mt-4 = margen superior -->
   <section class="py-5 mt-4">
+
+    <!-- Contenedor principal -->
     <div class="container">
+
+      <!-- ==================== TÍTULO ==================== -->
+      <!-- row = fila del Grid System -->
+      <!-- mb-4 = margen inferior -->
       <div class="row mb-4">
+
+        <!-- col-lg-6 = ocupa 6 de 12 columnas desde lg -->
+        <!-- En tamaños menores ocupa todo el ancho -->
         <div class="col-lg-6">
-          <p class="text-uppercase text-primary fw-semibold small mb-2">Último paso</p>
+
+          <!-- Utilidades de texto -->
+          <p class="text-uppercase text-primary fw-semibold small mb-2">
+            Último paso
+          </p>
+
           <h1 class="fw-bold">Tu pedido</h1>
         </div>
       </div>
 
+
+      <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+      <!-- row = fila del Grid System -->
+      <!-- g-4 = separación entre las columnas -->
       <div class="row g-4">
-        <!-- Resumen del carrito -->
+
+
+        <!-- ==================== RESUMEN DEL CARRITO ==================== -->
+        <!-- col-lg-5 = ocupa 5 de 12 columnas desde lg -->
+        <!-- En pantallas menores ocupa todo el ancho -->
         <div class="col-lg-5">
+
+          <!-- Card de Bootstrap -->
+          <!-- h-100 = ocupa toda la altura disponible -->
           <div class="card text-body h-100">
+
+            <!-- card-body = contenido interno de la Card -->
+            <!-- p-3 = padding -->
+            <!-- p-md-4 = aumenta el padding desde md -->
             <div class="card-body p-3 p-md-4">
+
               <h3 class="h5 mb-3">Resumen del carrito</h3>
+
+
+              <!-- ==================== LISTA DEL CARRITO ==================== -->
+              <!-- list-group = componente de lista de Bootstrap -->
+              <!-- list-group-flush = elimina bordes laterales de la lista -->
               <ul class="list-group list-group-flush mb-3">
+
+                <!-- d-flex = Flexbox -->
+                <!-- justify-content-between = separa producto y precio -->
+                <!-- align-items-center = centra verticalmente -->
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span>Pepperoni Craft <span class="text-muted small">x1</span></span>
+
+                  <span>
+                    Pepperoni Craft
+                    <span class="text-muted small">x1</span>
+                  </span>
+
                   <span class="font-monospace">$14.90</span>
                 </li>
+
+
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span>Margherita Clásica <span class="text-muted small">x1</span></span>
+
+                  <span>
+                    Margherita Clásica
+                    <span class="text-muted small">x1</span>
+                  </span>
+
                   <span class="font-monospace">$11.50</span>
                 </li>
+
+
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span>Limonada de la Casa <span class="text-muted small">x2</span></span>
+
+                  <span>
+                    Limonada de la Casa
+                    <span class="text-muted small">x2</span>
+                  </span>
+
                   <span class="font-monospace">$9.00</span>
                 </li>
+
               </ul>
 
+
+              <!-- ==================== CUPÓN ==================== -->
+              <!-- input-group = agrupa el campo y el botón en una sola línea -->
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Cupón de descuento" aria-label="Cupón de descuento" />
-                <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+
+                <!-- form-control = estilo Bootstrap para campos de formulario -->
+                <input type="text" class="form-control" placeholder="Cupón de descuento"
+                  aria-label="Cupón de descuento" />
+
+                <!-- Botón Bootstrap -->
+                <button class="btn btn-outline-secondary" type="button">
+                  Aplicar
+                </button>
+
               </div>
 
+
+              <!-- ==================== TOTALES ==================== -->
+              <!-- d-flex = Flexbox -->
+              <!-- justify-content-between = coloca texto y precio en extremos -->
               <div class="d-flex justify-content-between small text-muted mb-1">
                 <span>Subtotal</span>
                 <span>$35.40</span>
               </div>
+
               <div class="d-flex justify-content-between small text-muted mb-2">
                 <span>Descuento</span>
                 <span>-$0.00</span>
               </div>
+
               <hr />
+
+              <!-- Total -->
+              <!-- font-monospace = tipografía monoespaciada -->
+              <!-- fw-bold = negrita -->
+              <!-- fs-4 = tamaño de fuente -->
+              <!-- text-primary = color primario -->
               <div class="d-flex justify-content-between font-monospace fw-bold fs-4 text-primary">
                 <span>Total</span>
                 <span>$35.40</span>
               </div>
+
             </div>
           </div>
         </div>
 
-        <!-- Formulario de pedido con validación -->
+
+        <!-- ==================== FORMULARIO DE PEDIDO ==================== -->
+        <!-- col-lg-7 = ocupa 7 de 12 columnas desde lg -->
+        <!-- En tamaños menores ocupa todo el ancho -->
         <div class="col-lg-7">
+
+          <!-- Card de Bootstrap -->
           <div class="card text-body h-100">
+
             <div class="card-body p-3 p-md-4">
+
               <h3 class="h5 mb-3">Datos de entrega</h3>
+
+
+              <!-- ==================== FORMULARIO ==================== -->
+              <!-- row = Grid System dentro del formulario -->
+              <!-- g-3 = separación entre campos -->
+              <!-- needs-validation = clase utilizada por nuestro JavaScript -->
               <form class="row g-3 needs-validation" novalidate>
+
+
+                <!-- col-md-6 = desde md ocupa la mitad del ancho -->
+                <!-- Debajo de md ocupa todo el ancho -->
                 <div class="col-md-6">
-                  <label for="nombre" class="form-label">Nombre</label>
+
+                  <label for="nombre" class="form-label">
+                    Nombre
+                  </label>
+
+                  <!-- form-control = estilo Bootstrap para input -->
                   <input type="text" class="form-control" id="nombre" required />
-                  <div class="invalid-feedback">Ingresá tu nombre.</div>
+
+                  <!-- Mensaje de validación Bootstrap -->
+                  <div class="invalid-feedback">
+                    Ingresá tu nombre.
+                  </div>
+
                 </div>
+
+
                 <div class="col-md-6">
-                  <label for="apellido" class="form-label">Apellido</label>
+
+                  <label for="apellido" class="form-label">
+                    Apellido
+                  </label>
+
                   <input type="text" class="form-control" id="apellido" required />
-                  <div class="invalid-feedback">Ingresá tu apellido.</div>
+
+                  <div class="invalid-feedback">
+                    Ingresá tu apellido.
+                  </div>
+
                 </div>
+
+
                 <div class="col-md-6">
-                  <label for="telefono" class="form-label">Teléfono</label>
+
+                  <label for="telefono" class="form-label">
+                    Teléfono
+                  </label>
+
                   <input type="tel" class="form-control" id="telefono" required />
-                  <div class="invalid-feedback">Ingresá un teléfono válido.</div>
+
+                  <div class="invalid-feedback">
+                    Ingresá un teléfono válido.
+                  </div>
+
                 </div>
+
+
                 <div class="col-md-6">
-                  <label for="direccion" class="form-label">Dirección de entrega</label>
+
+                  <label for="direccion" class="form-label">
+                    Dirección de entrega
+                  </label>
+
                   <input type="text" class="form-control" id="direccion" required />
-                  <div class="invalid-feedback">Ingresá la dirección de entrega.</div>
+
+                  <div class="invalid-feedback">
+                    Ingresá la dirección de entrega.
+                  </div>
+
                 </div>
 
+
+                <!-- col-12 = ocupa las 12 columnas -->
                 <div class="col-12">
-                  <label class="form-label d-block">Método de pago</label>
+
+                  <label class="form-label d-block">
+                    Método de pago
+                  </label>
+
+
+                  <!-- form-check = estructura de checkbox/radio Bootstrap -->
+                  <!-- form-check-inline = coloca las opciones en línea -->
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoTarjeta" value="tarjeta" checked required />
+
+                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoTarjeta" value="tarjeta"
+                      checked required />
+
                     <label class="form-check-label" for="pagoTarjeta">
-                      <i class="bi bi-credit-card me-1"></i>Tarjeta
+
+                      <i class="bi bi-credit-card me-1"></i>
+                      Tarjeta
+
                     </label>
                   </div>
+
+
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoEfectivo" value="efectivo" required />
+
+                    <input class="form-check-input" type="radio" name="metodoPago" id="pagoEfectivo" value="efectivo"
+                      required />
+
                     <label class="form-check-label" for="pagoEfectivo">
-                      <i class="bi bi-cash-coin me-1"></i>Efectivo
+
+                      <i class="bi bi-cash-coin me-1"></i>
+                      Efectivo
+
                     </label>
                   </div>
+
                 </div>
 
+
+                <!-- col-12 = ocupa todo el ancho -->
+                <!-- d-grid = convierte el contenido en una cuadrícula -->
+                <!-- mt-2 = margen superior -->
                 <div class="col-12 d-grid mt-2">
+
+                  <!-- btn = botón Bootstrap -->
+                  <!-- btn-primary = color principal -->
+                  <!-- btn-lg = botón grande -->
                   <button type="submit" class="btn btn-primary btn-lg">
-                    Confirmar pedido <i class="bi bi-arrow-right ms-1"></i>
+
+                    Confirmar pedido
+
+                    <i class="bi bi-arrow-right ms-1"></i>
+
                   </button>
+
                 </div>
+
               </form>
+
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
+
+  <!-- Bootstrap JavaScript -->
+  <!-- Permite utilizar componentes interactivos de Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript propio del proyecto -->
   <script src="activos/js/main.js"></script>
+
 </body>
+
 </html>
